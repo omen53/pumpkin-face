@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+	<meta charset="UTF-8">
+	<title>Hotspot SMK ICB</title>
+	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Solway:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="icon" type="image/x-icon" href="img/smk.png">
+    <style type="text/css">
+        @font-face{
+            font-family: "Solway";
+            src: url("Solway-Medium.otf");
+        }
+        .Solway {
+            font-family: "Solway";
+        }
+    </style>
+</head>
+<body>
+
+$(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+    <script type="text/javascript" src="/md5.js"></script>
+    <script type="text/javascript">
+    <!--
+        function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+        document.sendin.submit();
+        return false;
+        }
+    //-->
+    </script>
+$(endif)
+
+	<img class="bitmap5" src="img/drawing5.png">
+	<div class="container">
+		<div class="img slide">
+			<img src="img/bg1.svg" class="slide1">
+            <img src="img/bg12.svg" class="slide2">
+            <img src="img/bg13.svg" class="slide3">
+		</div>
+		<div class="login-container">
+            <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    <div id="form-login">
+                    <div id="form-field-wrap">
+                <img class="avatar" src="img/icb.png">
+                <h2>Login Hotspot.</h2>
+                <div class="input-div one focus">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Username</h5>
+                    
+                        <input autocomplete="off" class="user"  type="text" id="username-login" name="username" placeholder="Nama Pengguna">
+                        <span class="border"></span>
+                    </div>
+                    
+                </div>
+                <div class="input-div two">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input type="password" class="user"  id="pass-login" name="password" placeholder="Kata Sandi">
+                        <span class="border"></span>
+                    </div>
+                </div>
+                    <input type="hidden" id="tsel" name="tsel" value="8">
+                    </div>                    
+                    </div>
+                <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+	</div>
+<div style="color: #c1c1c1; font-size: 8px"></div>
+<center>$(if error)<br /><div style="color: #FF8080; font-size: 8px">$(error)</div>$(endif)</center>
+
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>

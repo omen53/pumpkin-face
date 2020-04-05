@@ -1,0 +1,41 @@
+body{
+	background-color: #d0f6a8;
+	font-family: 'Solway' , serif;
+}
+
+/*.back{
+	position: fixed;
+	height: 100%;
+	width: 20%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+*/
+
+.svg{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 500px;
+	margin-top: 5%;
+}
+
+p{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 20px;
+	color: #00A36C;
+}
+
+@media screen and (max-width: 514px) {
+	.svg{
+		width: 350px
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.svg{
+		width: 300px;
+	}
+}

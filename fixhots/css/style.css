@@ -1,0 +1,397 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Solway', serif;
+	background-color: /*#f2bb64*/ #d0f6a8;
+	background-size: cover;
+	margin:0;
+/*	background-repeat: repeat-y;
+	-webkit-background-size:cover;
+	*/
+}
+
+
+.bitmap5{
+	position: fixed;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.container{
+	width: 100vw;
+	height:100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 7rem;
+	padding: 0 2rem;
+}
+
+.img.slide{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: -50px;
+	margin-top: 250px;
+}
+
+.img.slide img{
+	width: 500px;
+}
+
+.slide{
+	max-width: auto;
+/*	height: 500px;*/
+	position: relative;
+
+}
+
+.slide1,.slide2,.slide3{
+	position: absolute;
+	width: 100%;
+ 	height: 100%;
+}
+
+.slide1{
+	background:no-repeat center;
+	background-size: cover;
+	animation: fade infinite;
+	-webkit-animation: fade 20s infinite;
+	animation-duration: 20s;
+}
+
+.slide2{
+	background:no-repeat center;
+	background-size: cover;
+	animation: fade2 infinite;
+	-webkit-animation: fade2 20s infinite;
+	animation-duration: 20s;
+}
+
+.slide3{
+	background:no-repeat center;
+	background-size: cover;
+	animation: fade3 infinite;
+	-webkit-animation: fade3 20s infinite;
+	animation-duration: 20s;
+}
+
+@keyframes fade{
+	0%{opacity: 1}
+	33.333% {opacity: 0}
+	66.666% {opacity: 0}
+	100% {opacity: 1}
+}
+
+@keyframes fade2{
+	0%{opacity: 0}
+	33.333% {opacity: 1}
+	66.666% {opacity: 0}
+	100% {opacity: 0}
+}
+
+@keyframes fade3{
+	0%{opacity: 0}
+	33.333% {opacity: 0}
+	66.666% {opacity: 1}
+	100% {opacity: 0}
+}
+
+.login-container{
+	display: flex;
+	align-items: center;
+	text-align: center;
+    margin-left: 120px;
+}
+
+form{
+	width: 360px;
+}
+
+.avatar{
+	width: 140px;
+    height: 160px;
+    padding-bottom: 20px;
+}
+
+h2{
+	font-size: 2.1rem;
+	text-transform: uppercase;
+	margin: 10px 0;
+	color: #333;
+	display: inline-block;
+  	position: relative;
+  	white-space: nowrap;
+  	overflow: hidden;    
+  	border-right: solid 3px #333;
+  	white-space: nowrap;
+  	overflow: hidden;
+}
+
+/* Animation */
+h2 {
+  	animation:	animated-text 3.5s steps(25,end) 3.5s 1 normal both,
+            	animated-cursor 800ms steps(29,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 310px;}
+}
+
+/* cursor blinking animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: #333;}
+  to{border-right-color: transparent;}
+}
+
+
+form h2:after {
+	content: '';
+  	display: block;
+  	margin: auto;
+  	height: 3px;
+  	width: 0px;
+  	background: transparent;
+  	transition: width .5s ease, background-color .5s ease;
+  	transition-property: all;
+	transition-duration: 200ms;
+	transition-timing-function: ease;
+	transition-delay: 0s;
+	outline: none;
+
+}
+
+form h2:hover{
+	color: #117F22;
+}
+
+form h2:hover:after {
+  	width: 100%;
+  	background: #4E9A06;
+}
+
+.input-div{
+	padding-top: 30px;
+	display: grid;
+	grid-template-columns: 7% 93%;
+	margin: 25px 0;
+}
+
+input[type="text"],input[type="password"]{
+	width: 95%;
+    border-bottom: 3px solid #73D216;
+    padding-bottom: 20px;
+}
+
+:focus{
+    outline: none;
+}
+
+.input-div{
+    position: relative;
+    
+}
+
+div input[type="text"]{
+/*	padding-top: 50px;*/
+    width: 95%;
+}
+
+
+.user ~ .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #0A6518;
+}
+
+.user:focus ~ .border {
+    width: 95%;
+    transition: 0.5s;
+}
+
+.input-div.one{
+	margin-top: 0;
+}
+
+.input-div.two{
+	margin-bottom: 4px; 
+}
+
+.i{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.i i{
+	color: #4E9A06;
+}
+
+.input-div > div{
+	position: relative;
+	height: 45px;	
+}
+
+.input-div > div h5{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #999;
+	transition: .3s;
+	display: none;
+}
+
+.user{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	font-family: 'Solway', sans-serif;
+	color: #583600;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	margin: 3rem 0;
+	font-size: 1.2rem;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to left, #be8832, #6ed338, #00A36C);
+	cursor: pointer;
+	color: #fff;
+	font-family: 'Solway', sans-serif;
+	background-size: 200%;
+	transition: 1%;
+	text-transform: uppercase;
+
+}
+
+.btn:hover{
+	background-position: right;
+}
+
+@media screen and (max-width: 1120px){
+    form{
+        width: 290px;
+    }
+    
+    form h2{
+        font-size: 2rem;
+        margin: 8px 0;
+    }
+    
+    .img.slide img{
+        width: 380px;
+    }
+    
+    .login-container{
+        margin-left: 0;
+    }
+}
+
+/*@media screen and (max-width: 1069px){
+	form{
+		width: 320px;
+	}
+
+	form h2{
+    	font-size: 2.4rem;
+    	margin: 8px 0;
+    }
+    
+    .img img{
+        width: 400px;
+    }
+    
+    .login-container{
+        margin-left: 0;
+    }
+}*/
+
+@media screen and (max-width: 1069px){
+    .img.slide{
+        display: none;
+    }
+    
+    .slide1,.slide2,.slide3{
+    	display: none;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+    
+    .bitmap5{
+        display: none;
+    }
+    
+    .login-container{
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    h2{
+        font-size: 1.8rem;
+  		animation:	none;
+  		animation:	none;
+        white-space: none;
+  		overflow: none;    
+  		border-right: none;
+  		white-space: none;
+  		overflow: none;
+
+    }
+}
+
+
+@media screen and (max-width: 300px){
+	.img.slide{
+        display: none;
+    }
+
+    .slide1,.slide2,.slide3{
+    	display: none;
+    }
+    
+    form{
+        width: 250px;
+        height: auto;
+    }
+
+    .bitmap5{
+    	display: none;
+    }
+
+    .login-container{
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+}
